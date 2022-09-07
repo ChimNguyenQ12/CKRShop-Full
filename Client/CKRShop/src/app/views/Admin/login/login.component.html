@@ -1,0 +1,45 @@
+<div style="margin-top: 10%;" class="bg-light min-vh-90 d-flex flex-row align-items-center">
+  <c-container>
+    <c-row class="justify-content-center">
+      <c-col md="4">
+        <c-card-group>
+          <c-card class="p-4">
+            <c-card-body>
+              <form #loginForm="ngForm" (ngSubmit)="login(loginForm)" cForm>
+                <h1>Login</h1>
+                <div *ngIf="invalidLogin" class="alert alert-danger">Invalid username or password.</div>
+                <p class="text-medium-emphasis">Sign In to your account</p>
+                <c-input-group class="mb-3">
+                  <span cInputGroupText>
+                    <svg cIcon name="cilUser"></svg>
+                  </span>
+                  <input autoComplete="username" name="username" ngModel class="form-control" cFormControl
+                    placeholder="Username" />
+                </c-input-group>
+                <c-input-group class="mb-4">
+                  <span cInputGroupText>
+                    <svg cIcon name="cilLockLocked"></svg>
+                  </span>
+                  <input autoComplete="current-password" name="password" ngModel class="form-control" cFormControl
+                    placeholder="Password" type="password" />
+                </c-input-group>
+                <c-row>
+                  <c-col xs="6">
+                    <button type="submit" cButton class="px-4" color="primary">
+                      Login
+                    </button>
+                  </c-col>
+                  <c-col class="text-right" xs="6">
+                    <button routerLink="/forgot-password" cButton class="px-0" color="link">
+                      Forgot password?
+                    </button>
+                  </c-col>
+                </c-row>
+              </form>
+            </c-card-body>
+          </c-card>
+        </c-card-group>
+      </c-col>
+    </c-row>
+  </c-container>
+</div>

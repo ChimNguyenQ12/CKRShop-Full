@@ -1,0 +1,129 @@
+<div class="col-sm-12 col-md-12 col-lg-12">
+    <!-- product -->
+    <div class="product-content product-wrap clearfix product-deatil">
+        <div class="row">
+            <div class="col-md-5 col-sm-12 col-xs-12">
+                <div class="product-image">
+                    <div id="myCarousel-2" class="carousel slide">
+                        <ol class="carousel-indicators">
+                            <li data-target="#myCarousel-2" data-slide-to="0" class=""></li>
+                        </ol>
+                        <div style="max-width:600px; max-height: 400px; margin-left:20%" class="carousel-inner">
+                            <c-carousel>
+                                <c-carousel-inner>
+                                    <c-carousel-item *ngFor="let slide of slides">
+                                        <img [src]="slide.src" alt="{{ slide.title }}" loading="lazy" />
+                                    </c-carousel-item>
+                                </c-carousel-inner>
+                                <c-carousel-control [routerLink] caption="Previous" direction="prev">
+                                </c-carousel-control>
+                                <c-carousel-control [routerLink] caption="Next" direction="next"></c-carousel-control>
+                            </c-carousel>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-md-offset-1 col-sm-12 col-xs-12">
+                <br>
+                <h2 class="name">
+                    {{product.name}}
+                    <span style="color:red;font-size:18px;font-weight:bold" *ngIf="!checkstock"> (Sold Out)</span>
+                </h2>
+                <div><i class="fa fa-star fa-2x text-warning"></i>
+                    <i class="fa fa-star fa-2x text-warning"></i>
+                    <i class="fa fa-star fa-2x text-warning"></i>
+                    <i class="fa fa-star fa-2x text-warning"></i>
+                    <i class="fa fa-star fa-2x text-muted"></i>
+                    <span class="fa fa-2x">
+                        <h5>(109) Votes</h5>
+                    </span>
+                    <a href="javascript:void(0);">109 customer reviews</a>
+                    <a style="margin-left: 45%; background-color: palevioletred;" (click)="addToWishlist(product.id)" class="btn btn-primary"><b style="color:aliceblue;">♥</b></a>
+                </div>
+
+
+                <hr />
+                <h3 class="price-container">
+                    ${{product.price}}
+                    <small>*includes tax</small>
+                </h3>
+                <hr />
+                <div class="description description-tabs">
+                    {{description}}
+                </div>
+                <hr />
+                <div class="row">
+                    <div class="col-sm-12 col-md-6 col-lg-6">
+                        <a *ngIf="checkstock" (click)="addToCart(product)" style="color: aliceblue;"
+                            class="btn btn-success btn-lg">Add to cart (${{product.price}})</a>
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-6">
+                        <div class="btn-group pull-right">
+                            <button [routerLink]="['/cart']" class="btn btn-white btn-default"><i
+                                    class="fa fa-shopping-cart"></i> Go to cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end product -->
+</div>
+<section style="padding-top: 20%;">
+    <div style="width: 1500px;" class="container my-5 py-5">
+        <div class="row d-flex justify-content-center">
+            <div class="col-md-12 col-lg-10 col-xl-8">
+                <div class="card">
+                    <div *ngFor="let cmt of listComment " class="card-body">
+                        <div class="d-flex flex-start align-items-center">
+                            <img class="rounded-circle shadow-1-strong me-3" [src]="createImgPath(cmt.user.avatar)"
+                                alt="avatar" width="60" height="60" />
+                            <div>
+                                <h3 class="fw-bold text-primary mb-1">{{cmt.user.fullName}}</h3>
+                                <p style="color:black; font-size: 12px;">
+                                    {{cmt.createdAt |date}}
+                                </p>
+                            </div>
+                        </div>
+
+                        <p style="font-size:18px" class="mt-3 mb-4 pb-2">
+                            {{cmt.content}}
+                        </p>
+
+                        <div class="small d-flex justify-content-start">
+                            <a href="#!" class="d-flex align-items-center me-3">
+                                <i class="far fa-thumbs-up me-2"></i>
+                                <p class="mb-0">Like</p>
+                            </a>
+                            <a href="#!" class="d-flex align-items-center me-3">
+                                <i class="far fa-comment-dots me-2"></i>
+                                <p class="mb-0">Comment</p>
+                            </a>
+                            <a href="#!" class="d-flex align-items-center me-3">
+                                <i class="fas fa-share me-2"></i>
+                                <p class="mb-0">Share</p>
+                            </a>
+                        </div>
+                    </div>
+                    <form #addForm="ngForm" (ngSubmit)="add(addForm)" action="">
+                        <div class="card-footer py-3 border-0" style="background-color: #f8f9fa;">
+                            <div class="d-flex flex-start w-100">
+                                <img style="width: 50px;height: 50px;border-radius: 100%;"
+                                    [src]="createImgPath(userCurrent)" />
+                                <div class="form-outline w-100">
+                                    <textarea name="content" ngModel class="form-control" id="textAreaExample" rows="4"
+                                        style="background: #fff;"></textarea>
+                                    <label class="form-label" for="textAreaExample">Message</label>
+                                </div>
+                            </div>
+                            <div class="float-end mt-2 pt-1">
+                                <button type="submit" class="btn btn-primary btn-sm">Post comment</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

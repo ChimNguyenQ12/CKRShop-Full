@@ -1,0 +1,102 @@
+<c-col xs="12">
+  <c-card class="mb-4">
+    <c-card-header>
+      <strong>All Orders</strong>
+    </c-card-header>
+    <c-card-body>
+      <mat-toolbar color="primary">
+        <mat-toolbar-row>
+          <span>Order</span>
+          <span class="example-spacer"></span>
+          <span class="example-spacer"></span>
+        </mat-toolbar-row>
+      </mat-toolbar>
+      <form #searchForm="ngForm" (ngSubmit)="search(searchForm)" cForm>
+        <mat-form-field appearance="fill">
+          <mat-label>From Date</mat-label>
+          <input name="fromDate" ngModel matInput #input type="date">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>To Date</mat-label>
+          <input name="toDate" ngModel matInput #input type="date">
+        </mat-form-field>
+        <button style="margin-left: 89%;" type="submit" mat-raised-button color="primary">
+          <mat-icon>search</mat-icon>
+        </button>
+        <button type="button" (click)="refreshForm()" style="margin-left: 10px;" mat-raised-button color="warn">
+          <mat-icon>refresh</mat-icon>
+        </button>
+      </form>
+      <div class="container">
+        <div style="margin-top:10px;">
+          <mat-form-field appearance="standard">
+            <mat-label>Filter</mat-label>
+            <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Tivi" #input>
+          </mat-form-field>
+          <!-- <button type="button" (click)="refreshForm()"
+            style="position: absolute; margin-left:-70px; margin-top: 10px; " mat-raised-button color="warn">
+            <mat-icon>refresh</mat-icon>
+          </button> -->
+          <div class="mat-elevation-z8">
+            <table mat-table [dataSource]="dataSource" matSort>
+              <ng-container matColumnDef="id">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+                <td mat-cell *matCellDef="let row"> {{row.id}} </td>
+              </ng-container>
+              <ng-container matColumnDef="code">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Code </th>
+                <td mat-cell *matCellDef="let row"> {{row.code}} </td>
+              </ng-container>
+              <ng-container matColumnDef="user.userName">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> UserName </th>
+                <td mat-cell *matCellDef="let row"> {{row.user.userName}} </td>
+              </ng-container>
+              <ng-container matColumnDef="shippingAddress">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Shipping Address </th>
+                <td mat-cell *matCellDef="let row"> {{row.shippingAddress}} </td>
+              </ng-container>
+              <ng-container matColumnDef="shippingPhone">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Shipping Phone </th>
+                <td mat-cell *matCellDef="let row"> {{row.shippingPhone}} </td>
+              </ng-container>
+              <ng-container matColumnDef="issuedDate">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> issuedDate </th>
+                <td mat-cell *matCellDef="let row"> {{row.issuedDate | date}} </td>
+              </ng-container>
+              <ng-container matColumnDef="total">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Total </th>
+                <td mat-cell *matCellDef="let row"> {{row.total }} </td>
+              </ng-container>
+              <ng-container matColumnDef="status">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Status </th>
+                <td mat-cell *matCellDef="let row">
+                  {{row.status==1?"Processing":row.status==2?"Confirmed":row.status==3?"Packed":row.status==4?"Transported":row.status==5?"Delivered":"Cancelled"}}
+                </td>
+              </ng-container>
+              <ng-container matColumnDef="action">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Action </th>
+                <td mat-cell *matCellDef="let row">
+                  <button style="margin-left:-14%;" (click)="editOrder(row)" mat-icon-button color="primary">
+                    <mat-icon>description</mat-icon>
+                  </button>
+                  <button [disabled]="!isAdmin" (click)="deleteOrder(row.id)" mat-icon-button color="warn">
+                    <mat-icon>delete</mat-icon>
+                  </button>
+                </td>
+              </ng-container>
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+              <!-- Row shown when there is no matching data. -->
+              <tr class="mat-row" *matNoDataRow>
+                <td class="mat-cell" colspan="4">There are no orders in this list yet</td>
+              </tr>
+            </table>
+            <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+            <h1 *ngIf="checkSearch" style="font-weight: bold; display: inline;">Total value of orders:</h1>
+            <span *ngIf="checkSearch" style="font-weight: bold;font-size: 20px; color: red;">{{Total}}$</span>
+          </div>
+        </div>
+      </div>
+    </c-card-body>
+  </c-card>
+</c-col>

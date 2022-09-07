@@ -1,0 +1,56 @@
+<section>
+    <div class="container padding-bottom-3x mb-1 mt-4">
+        <h3>My Order</h3>
+        <div style="font-weight: bold;font-size: 30px; color: red;" *ngIf="!checkListOrder"> You dont have any
+            order!</div>
+        <!-- Shopping Cart-->
+        <div *ngIf="checkListOrder" style="margin-bottom: 50px;" class="table-responsive shopping-cart">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Code</th>
+                        <th>Shipping Phone</th>
+                        <th>Shipping Address</th>
+                        <th> Order Date</th>
+                        <th>Status</th>
+                        <th>Total</th>
+                        <th>Detail Order</th>
+                    </tr>
+                </thead>
+                <tbody *ngFor="let row of listOrder">
+                    <tr>
+                        <td>
+                            {{row.code}}
+                        </td>
+
+                        <td> {{row.shippingPhone}}</td>
+                        <td> {{row.shippingAddress}}</td>
+                        <td> {{row.issuedDate |date}} </td>
+                        <td style="color: green; font-weight: bold;">
+                            {{row.status==1?"Processing":row.status==2?"Confirmed":row.status==3?"Packed":row.status==4?"Transported":row.status==5?"Delivered":"Cancelled"}}
+                        </td>
+                        <td class="text-center text-lg text-medium">
+                            <span style="color:red; font-weight: bold;margin-left: -53%;">{{row.total}}
+                            </span>
+
+                        </td>
+                        <td>
+                            <button (click)="detailOrder(row)"
+                                style="margin-left: 17%; margin-top: -10%; margin-left: 12%;" mat-icon-button
+                                color="primary">
+                                <mat-icon>edit</mat-icon>
+                            </button>
+                        </td>
+
+                    </tr>
+                </tbody>
+
+            </table>
+        </div>
+
+        <div class="shopping-cart-footer">
+            <div class="column"><a class="btn btn-outline-secondary" routerLink="/"><i
+                        class="icon-arrow-left"></i>&nbsp;Back to Shopping</a></div>
+        </div>
+    </div>
+</section>

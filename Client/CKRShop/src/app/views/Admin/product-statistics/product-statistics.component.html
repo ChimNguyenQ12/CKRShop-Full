@@ -1,0 +1,30 @@
+<app-widgets-dropdown></app-widgets-dropdown>
+<ul>
+</ul>
+
+<div class="container-fluid">
+  <div class="row pt-2">
+    <div class="col-md-12">
+      <div class="card text-left">
+        <div class="card-body">
+          <h1 class="card-title border-bottom">Top Selling Products</h1>
+          <ngx-charts-bar-vertical [view]="[1150,500]" [results]="BestSelling" [xAxisLabel]="'Products'"
+            [legendTitle]="'Top Selling Products'" [yAxisLabel]="'Inventory number'" [legend]="true"
+            [showXAxisLabel]="true" [showYAxisLabel]="true" [xAxis]="true" [yAxis]="true" [gradient]="true">
+          </ngx-charts-bar-vertical>
+        </div>
+      </div>
+    </div>
+    <div style="margin-bottom: 10px;"></div>
+    <div class="col-md-12">
+      <div class="card text-left">
+        <div class="card-body">
+          <h1 class="card-title border-bottom">Number of products in stock</h1>
+          <ngx-charts-pie-chart [results]="productData" [legend]="true" [legendTitle]="'Stock Report'"
+            [view]="[1100,400]" [labels]="true">
+          </ngx-charts-pie-chart>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

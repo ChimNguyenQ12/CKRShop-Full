@@ -1,0 +1,87 @@
+<div style="margin-top: -21px; margin-right: -20px;" mat-dialog-action [align]="'end'">
+    <button mat-dialog-close="" mat-icon-button color="warn" aria-label="Example icon-button with a heart icon">
+        <mat-icon>close </mat-icon>
+    </button>
+</div>
+<h1 mat-dialog-title> {{actionBtn}} User </h1>
+<div mat-dialog-content>
+    <form [formGroup]="userForm">
+        <h6> Lasted Update Date: {{createdAt}}</h6>
+        <mat-form-field appearance="outline">
+            <mat-label>Full Name</mat-label>
+            <input formControlName="fullName" matInput placeholder="Full Name">
+            <mat-error class="text-danger" *ngIf="userForm.value.fullName == ''">
+                Full Name is required
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>UserName</mat-label>
+            <input style="background-color: rgb(241, 239, 238);" readonly formControlName="userName" matInput
+                placeholder="User Name">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Email</mat-label>
+            <input style="background-color: rgb(241, 239, 238);" formControlName="email" matInput type="email"
+                placeholder="Email">
+
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Address</mat-label>
+            <input formControlName="address" matInput placeholder="Address">
+            <mat-error class="text-danger" *ngIf="userForm.value.address == ''">
+                Address is required
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Phone</mat-label>
+            <input maxlength="6"
+                oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                formControlName="phoneNumber" [maxlength]="12" type="number" matInput placeholder="Phone">
+
+            <mat-error class="text-danger" *ngIf="userForm.value.phoneNumber == ''">
+                Phone is required
+            </mat-error>
+        </mat-form-field>
+        <!-- <mat-form-field appearance="outline">
+            <mat-label>Role</mat-label>
+            <mat-select formControlName="role" placehoder="Role">
+                <mat-option *ngFor="let role of listRole" [value]="role.id">
+                    {{role.name}}
+                </mat-option>
+            </mat-select>
+            <mat-error class="text-danger" *ngIf="userForm.value.role == ''">
+                Role is required
+            </mat-error>
+        </mat-form-field> -->
+        <div class="col-md-3">
+            <input formControlName="avatar" accept=".jpg" type="file" #file placeholder="Choose file"
+                (change)="uploadFile(file.files)" style="display:none;">
+            <button mat-flat-button style="margin-bottom: 20px;" color="primary" (click)="file.click()">Upload
+                File</button>
+        </div>
+        <div class="col-md-4">
+            <span class="upload" *ngIf="progress > 0">
+                {{progress}}%
+            </span>
+            <span class="upload" *ngIf="message">
+                {{message}}
+            </span>
+        </div>
+        <div *ngIf="!isStaff">
+            <label for="">
+                <h1>User Status</h1>
+            </label>
+            <mat-radio-group style="margin-top:-1px;" formControlName="status" class="example-radio-group">
+                <mat-radio-button style="margin-right: 20px;" class="example-radio-button"
+                    *ngFor="let sta of statusList" [value]="sta">
+                    {{sta==1?"Active":sta==2?"Inactive":"Lock"}}
+                </mat-radio-button>
+            </mat-radio-group>
+        </div>
+
+    </form>
+</div>
+<div mat-dialog-action [align]="'end'">
+    <button [disabled]="!isAdmin" style="margin-left:8px;" mat-raised-button color="primary"
+        (click)="addUser()">{{actionBtn}}</button>
+</div>

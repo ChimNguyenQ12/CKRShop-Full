@@ -1,0 +1,24 @@
+
+
+<div class="single-product-area" style="margin-top: 0px;">
+  <h1 class="text-center mt-4">Searched Products!</h1>
+    <div class="zigzag-bottom"></div>
+    <div class="container">
+        <div class="row">
+            <div style="margin-top: 20px;" class="col-md-3" *ngFor="let product of products$ | async">   
+                <div class="card" style="width: 103%;">
+                    <a [routerLink]="['/products', product.id]"><img style="height:200px" src="{{createImgPath(product.image)}}" class="card-img-top" alt="..."></a>
+                    <div class="card-body">
+                      <h5 style="height:40px; margin-top:15px;font-size: 14px" class="card-title">{{product.name}}</h5>
+                      <p style="color:red;font-size: 20px;" class="card-text"><b>{{product.price}}$</b></p>
+                      <a *ngIf="checkstock(product.stock)" (click)="addToCart(product)" class="btn btn-primary"><b style="color:aliceblue">Add To Cart</b></a>
+                      <a *ngIf="!checkstock(product.stock)" disabled class="btn btn-danger"><b style="color:aliceblue">Sold Out</b></a>
+                      <a style="margin-left: 45%; background-color: palevioletred;" (click)="addToWishlist(product.id)" class="btn btn-primary"><b style="color:aliceblue;">♥</b></a>
+                    </div>
+                  </div>
+            </div>
+           
+
+        </div>
+    </div>
+</div>

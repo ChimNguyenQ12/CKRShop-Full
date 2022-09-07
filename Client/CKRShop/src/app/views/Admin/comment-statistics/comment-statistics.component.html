@@ -1,0 +1,30 @@
+<app-widgets-dropdown-comment></app-widgets-dropdown-comment>
+<ul>
+</ul>
+
+<div class="container-fluid">
+  <div class="row pt-2">
+    <div class="col-md-12">
+      <div class="card text-left">
+        <div class="card-body">
+          <h1 class="card-title border-bottom">User bar chart</h1>
+          <ngx-charts-bar-vertical [view]="[1150,500]" [results]="commentData" [xAxisLabel]="'Users'"
+            [legendTitle]="'User Chart'" [yAxisLabel]="'Number of Users'" [legend]="true" [showXAxisLabel]="true"
+            [showYAxisLabel]="true" [xAxis]="true" [yAxis]="true" [gradient]="true">
+          </ngx-charts-bar-vertical>
+        </div>
+      </div>
+    </div>
+    <div style="margin-bottom: 10px;"></div>
+    <div class="col-md-12">
+      <div class="card text-left">
+        <div class="card-body">
+          <h1 class="card-title border-bottom">User pie chart</h1>
+          <ngx-charts-pie-chart [results]="commentData" [legend]="true" [legendTitle]="'User Report'"
+            [view]="[1100,400]" [labels]="true">
+          </ngx-charts-pie-chart>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

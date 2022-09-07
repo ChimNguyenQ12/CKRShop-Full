@@ -1,0 +1,33 @@
+<div style="margin-top: -21px; margin-right: -20px;" mat-dialog-action [align]="'end'">
+    <button mat-dialog-close="" mat-icon-button color="warn" aria-label="Example icon-button with a heart icon">
+        <mat-icon>close </mat-icon>
+    </button>
+</div>
+<h1 mat-dialog-title> Detail Order</h1>
+<div mat-dialog-content>
+    <form [formGroup]="orderForm">
+
+        <mat-form-field appearance="outline">
+            <mat-label>Code</mat-label>
+            <input style="background-color: rgb(241, 239, 238);" readonly="" formControlName="code" value="{{code}}"
+                matInput>
+        </mat-form-field>
+
+        <h2>Products</h2>
+        <div *ngFor="let pro of product" cListGroup>
+            <button cListGroupItem class="d-flex justify-content-between align-items-center">
+                <img [src]="createImgPath(pro.product.image)" style=" width:70px; height:70px; ">
+                <h4 style="color: green;font-weight: bold; width: 150px;">{{pro.product.name}}</h4>
+                <h4 style="color: red;font-weight: bold;">{{pro.unitPrice}}$</h4>
+                <c-badge color="success" style="color: white; margin-top: -2%; " shape="rounded-pill">{{pro.quantity}}
+                </c-badge>
+            </button>
+        </div>
+        <td>
+            <div style="margin-left: 400px;" mat-dialog-action>
+                <button style="margin-left:8px;" mat-raised-button color="warn" [disabled]="checkStatus"
+                    (click)="cancelOrder()">Cancel Order</button>
+            </div>
+        </td>
+    </form>
+</div>

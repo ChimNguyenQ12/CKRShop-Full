@@ -1,0 +1,44 @@
+<div style="margin-top: -21px; margin-right: -20px;" mat-dialog-action [align]="'end'">
+    <button mat-dialog-close="" mat-icon-button color="warn" aria-label="Example icon-button with a heart icon">
+        <mat-icon>close </mat-icon>
+    </button>
+</div>
+<h1 mat-dialog-title> Detail Comment</h1>
+<div mat-dialog-content>
+    <form [formGroup]="commentForm">
+        <mat-form-field appearance="outline">
+            <mat-label>User Name</mat-label>
+            <input style="background-color: rgb(241, 239, 238);" readonly="" formControlName="userId" value="{{user}}"
+                matInput>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Full Name</mat-label>
+            <input style="background-color: rgb(241, 239, 238);" readonly="" formControlName="fullname"
+                value="{{fullname}}" matInput>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Product</mat-label>
+            <input style="background-color: rgb(241, 239, 238);" readonly="" formControlName="id" value="{{product}}"
+                matInput>
+
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Content</mat-label>
+            <textarea style="background-color: rgb(241, 239, 238);" style="height:200px;" readonly=""
+                formControlName="content" matInput>
+            </textarea>
+        </mat-form-field>
+        <label for="">
+            <h1>Comment Status</h1>
+        </label>
+        <mat-radio-group style="margin-top:-1px;" formControlName="status" class="example-radio-group">
+            <mat-radio-button class="example-radio-button" *ngFor="let sta of statusList" [value]="sta">
+                {{sta==1?"Existing":"Hidden"}}
+            </mat-radio-button>
+        </mat-radio-group>
+    </form>
+</div>
+<div mat-dialog-action [align]="'end'">
+    <button style="margin-left:8px;" mat-raised-button color="primary" (click)="updateComment()">Save</button>
+</div>

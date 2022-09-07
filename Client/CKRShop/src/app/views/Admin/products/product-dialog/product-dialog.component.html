@@ -1,0 +1,117 @@
+<div style="margin-top: -21px; margin-right: -20px;" mat-dialog-action [align]="'end'">
+    <button mat-dialog-close="" mat-icon-button color="warn" aria-label="Example icon-button with a heart icon">
+        <mat-icon>close </mat-icon>
+    </button>
+</div>
+<h1 mat-dialog-title> {{actionBtn}} Product </h1>
+<div mat-dialog-content>
+    <span *ngIf="Check" style="color:rgb(216, 25, 25)"> *You need to select the product type first</span>
+
+    <form [formGroup]="productForm">
+        <!-- <label for="">Product Type</label> -->
+        <mat-form-field appearance="outline">
+
+            <mat-label>Product Type</mat-label>
+            <mat-select (ngModelChange)="getValue($event)" formControlName="productTypeId" placehoder="Product Type">
+                <mat-option *ngFor="let cate of productType" value="{{cate.id}}">
+                    {{cate.name}}</mat-option>
+            </mat-select>
+            <mat-error class="text-danger" *ngIf="productForm.value.productTypeId == ''">
+                Product Type is required
+            </mat-error>
+        </mat-form-field>
+        <!-- <label for="">Trademark</label> -->
+        <mat-form-field appearance="outline">
+            <mat-label>Trademark</mat-label>
+            <mat-select formControlName="branch" placehoder="Trademark">
+                <mat-option *ngFor="let cate of ListTrademark" value="{{cate.name}}">{{cate.name}}</mat-option>
+            </mat-select>
+            <mat-error class="text-danger" *ngIf="productForm.value.productTypeId == ''">
+                Please Select Product Type first.
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Status</mat-label>
+            <mat-select formControlName="status" placehoder="Status Product">
+                <mat-option *ngFor="let sta of statusList" [value]="sta">
+                    {{sta==1?"Active":sta==2?"New":sta==3?"Error":sta==4?"Inventory":sta==5?"Selling":"Inactive"}}
+                </mat-option>
+            </mat-select>
+            <mat-error class="text-danger" *ngIf="productForm.value.status == ''">
+                Status is required
+            </mat-error>
+        </mat-form-field>
+        <!-- <label for="">SKU</label> -->
+        <mat-form-field appearance="outline">
+            <mat-label>SKU</mat-label>
+            <input formControlName="sku" matInput placeholder="SKU">
+            <mat-error class="text-danger" *ngIf="productForm.value.sku == ''">
+                SKU is required
+            </mat-error>
+        </mat-form-field>
+        <!-- <label for="">Product Name</label> -->
+        <mat-form-field appearance="outline">
+            <mat-label>Product Name</mat-label>
+            <input formControlName="name" matInput placeholder="Product Name">
+            <mat-error class="text-danger" *ngIf="productForm.value.name == ''">
+                Product Name is required
+            </mat-error>
+        </mat-form-field>
+        <!-- <label for="">Price</label> -->
+        <mat-form-field appearance="outline">
+            <mat-label>Price</mat-label>
+            <input currency formControlName="price" matInput min="0" type="number" placeholder="Price">
+            <mat-error class="text-danger" *ngIf="productForm.value.price == ''">
+                Price is required
+            </mat-error>
+            <mat-error class="text-danger" *ngIf="productForm.value.price <0">
+                Price must be greater than or equal 0
+            </mat-error>
+        </mat-form-field>
+        <!-- <label for="">Stock</label> -->
+        <mat-form-field appearance="outline">
+            <mat-label>Stock</mat-label>
+            <input formControlName="stock" matInput type="number" min="1" placeholder="Stock">
+            <mat-error class="text-danger" *ngIf="productForm.value.stock == ''">
+                Stock is required
+            </mat-error>
+            <mat-error class="text-danger" *ngIf="productForm.value.stock <1">
+                Stock must be greater than 0
+            </mat-error>
+        </mat-form-field>
+        <!-- <label for="">Description</label> -->
+
+
+        <ckeditor formControlName="description" [editor]="Editor">
+        </ckeditor>
+
+        <!--test image button-->
+        <!-- <button type="button" mat-raised-button (click)="fileInput.click()">Choose File</button>
+        <input formControlName="image" hidden (change)="onFileSelected()" #fileInput type="file" id="file"> -->
+        <!-- <input formControlName="image" #jpgInput hidden="true" type="file" onclick="this.value=null"
+            (change)="jpgInputChange($event)" accept=".jpg" />
+        <button mat-flat-button color="primary" (click)="jpgInput.click()">Choose Image</button> -->
+
+        <label style="margin-top: 20px; margin-bottom: 20px;margin-right: 20px; font-size: large;" for="">Image
+            Product</label> <span style="color: red; font-weight: bold; ">(Optional)</span>
+        <div class="col-md-3">
+            <input formControlName="image" accept=".jpg" type="file" #file placeholder="Choose file"
+                (change)="uploadFile(file.files)" style="display:none;" multiple>
+            <button mat-flat-button style="margin-bottom: 20px;" color="primary" (click)="file.click()">Upload
+                File</button>
+        </div>
+        <div style="margin-left: 120px; margin-top: -55px;" class="col-md-4">
+            <span class="upload" *ngIf="progress > 0">
+                {{progress}}%
+            </span>
+            <span class="upload" *ngIf="message">
+                {{message}}
+            </span>
+        </div>
+
+    </form>
+</div>
+<div mat-dialog-action [align]="'end'">
+    <button style="margin-left:8px;" mat-raised-button color="primary" [disabled]="!productForm.valid"
+        (click)="addProduct()">{{actionBtn}}</button>
+</div>

@@ -1,0 +1,45 @@
+<div style="margin-top: -21px; margin-right: -20px;" mat-dialog-action [align]="'end'">
+    <button mat-dialog-close="" mat-icon-button color="warn" aria-label="Example icon-button with a heart icon">
+        <mat-icon>close </mat-icon>
+    </button>
+</div>
+<h1 mat-dialog-title> {{actionBtn}} Advertisement </h1>
+<div mat-dialog-content>
+    <form [formGroup]="advertisementForm">
+        <mat-form-field appearance="outline">
+            <mat-label>Category Image</mat-label>
+            <mat-select formControlName="imageTypeId" placehoder="Image Type">
+                <mat-option *ngFor="let cate of CategoryName" value="{{cate.id}}">{{cate.typeName}}</mat-option>
+            </mat-select>
+            <mat-error class="text-danger" *ngIf="advertisementForm.value.imageTypeId == ''">
+                Image Type is required
+            </mat-error>
+        </mat-form-field>
+        <div class="col-md-3">
+            <input formControlName="image" accept=".jpg" type="file" #file placeholder="Choose file"
+                (change)="uploadFile(file.files)" style="display:none;">
+            <button mat-flat-button style="margin-bottom: 20px;" color="primary" (click)="file.click()">Upload
+                File</button>
+        </div>
+        <div class="col-md-4">
+            <span class="upload" *ngIf="progress > 0">
+                {{progress}}%
+            </span>
+            <span class="upload" *ngIf="message">
+                {{message}}
+            </span>
+        </div>
+        <label for="">
+            <h1>Image Status</h1>
+        </label>
+        <mat-radio-group style="margin-top:-1px;" formControlName="status" class="example-radio-group">
+            <mat-radio-button class="example-radio-button" *ngFor="let sta of statusList" [value]="sta">
+                {{sta==1?"Active":"Inactive"}}
+            </mat-radio-button>
+        </mat-radio-group>
+    </form>
+</div>
+<div mat-dialog-action [align]="'end'">
+    <button [disabled]="!advertisementForm.valid" style="margin-left:8px;" mat-raised-button color="primary"
+        (click)="addAdvertisement()">{{actionBtn}}</button>
+</div>

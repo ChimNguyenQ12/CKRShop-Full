@@ -1,0 +1,42 @@
+<div style="margin-top: -21px; margin-right: -20px;" mat-dialog-action [align]="'end'">
+    <button mat-dialog-close="" mat-icon-button color="warn" aria-label="Example icon-button with a heart icon">
+        <mat-icon>close </mat-icon>
+    </button>
+</div>
+<h1 mat-dialog-title> {{actionBtn}} Admin </h1>
+<div mat-dialog-content>
+    <form [formGroup]="userForm">
+        <mat-form-field appearance="outline">
+            <mat-label>UserName</mat-label>
+            <input formControlName="userName" matInput placeholder="User Name">
+            <mat-error class="text-danger" *ngIf="userForm.value.userName == ''">
+                User Name is required
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Password</mat-label>
+            <input formControlName="password" type="password" matInput placeholder="Password" required
+                pattern="^(?=.*[A-Z])(?=.*[0-9])(?=.*[a-z]).{8,}$">
+            <mat-error *ngIf="userForm.value.password">Password must be a combination of lower-case, upper-case,@,
+                numbers
+                and at least 9 characters long</mat-error>
+            <mat-error class="text-danger" *ngIf="userForm.value.password == ''">
+                Password is required
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Email</mat-label>
+            <input formControlName="email" required pattern="^[a-z0-9]+@[a-z0-9]+.[a-z]{2,4}$" matInput type="email"
+                placeholder="Email">
+            <mat-error *ngIf="userForm.value.email">Email must be a combination of lower-case,@
+                and at least 9 characters long</mat-error>
+            <mat-error class="text-danger" *ngIf="userForm.value.email == ''">
+                Email is required
+            </mat-error>
+        </mat-form-field>
+    </form>
+</div>
+<div mat-dialog-action [align]="'end'">
+    <button style="margin-left:8px;" mat-raised-button color="primary" [disabled]="!userForm.valid"
+        (click)="addUser()">{{actionBtn}}</button>
+</div>

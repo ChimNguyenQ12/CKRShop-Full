@@ -1,0 +1,266 @@
+<div class="single-product-area">
+    <div class="zigzag-bottom"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="single-sidebar">
+                    <h2 class="sidebar-title">Search Products</h2>
+                    <form action="">
+                        <input type="text" placeholder="Search products...">
+                        <input type="submit" value="Search">
+                    </form>
+                </div>
+                
+                <div class="single-sidebar">
+                    <h2 class="sidebar-title">Products</h2>
+                    <div class="thubmnail-recent" *ngFor="let product of products$ | async">
+                        <img src="img/product-thumb-1.jpg" class="recent-thumb" alt="">
+                        <h2><a href="single-product.html">{{product.name}}</a></h2>
+                        <div class="product-sidebar-price">
+                            <ins>${{product.price}}</ins> 
+                        </div>                             
+                    </div>                   
+                </div>
+            </div>
+            
+            <div class="col-md-8">
+                <div class="product-content-right">
+                    <div class="woocommerce">
+                        
+
+                        <form id="login-form-wrap" class="login collapse" method="post">
+
+
+                            <p>If you have shopped with us before, please enter your details in the boxes below. If you are a new customer please proceed to the Billing &amp; Shipping section.</p>
+
+                            <p class="form-row form-row-first">
+                                <label for="username">Username or email <span class="required">*</span>
+                                </label>
+                                <input type="text" id="username" name="username" class="input-text">
+                            </p>
+                            <p class="form-row form-row-last">
+                                <label for="password">Password <span class="required">*</span>
+                                </label>
+                                <input type="password" id="password" name="password" class="input-text">
+                            </p>
+                            <div class="clear"></div>
+
+
+                            <p class="form-row">
+                                <input type="submit" value="Login" name="login" class="button">
+                                <label class="inline" for="rememberme"><input type="checkbox" value="forever" id="rememberme" name="rememberme"> Remember me </label>
+                            </p>
+                            <p class="lost_password">
+                                <a href="#">Lost your password?</a>
+                            </p>
+
+                            <div class="clear"></div>
+                        </form>
+
+                        <div (click)="couponclick()" class="woocommerce-info">Have a coupon? <a class="showcoupon" data-toggle="collapse"  aria-expanded="false" aria-controls="coupon-collapse-wrap">Click here to enter your code</a>
+                        </div>
+                        <div *ngIf="iscoupon" class="column">
+                            <form class="coupon-form" method="post">
+                                <input class="form-control form-control-sm" type="text" id="CouponCode" placeholder="Coupon code" required="">
+                                <button *ngIf="!applycoupon" (click)="coupondiscount()" class="btn btn-outline-primary btn-sm" type="submit">Apply Coupon</button>
+                                <button (click)="dontusecouponclick()" style="margin-left: 64%;"class="btn btn-outline-primary btn-sm" type="submit">Don't use coupon</button>
+                            </form>
+                            <span style="color:red" *ngIf="iscouponfalse">Invalid Coupon Code!</span>
+                        </div> 
+                        <form id="coupon-collapse-wrap" method="post" class="checkout_coupon collapse">
+
+                            <p class="form-row form-row-first">
+                                <input type="text" value="" id="coupon_code" placeholder="Coupon code" class="input-text" name="coupon_code">
+                            </p>
+
+                            <p class="form-row form-row-last">
+                                <input type="submit" value="Apply Coupon" name="apply_coupon" class="button">
+                            </p>
+
+                            <div class="clear"></div>
+                        </form>
+
+                        <form enctype="multipart/form-data" action="#" class="checkout" method="post" name="checkout">
+
+                            <div id="customer_details" class="col2-set">
+                                <div class="col-1">
+                                    <div class="woocommerce-billing-fields">
+                                        <h3>Billing Details</h3>
+
+                                        <div class="clear"></div>
+
+                                        <p id="billing_address_1_field" class="form-row form-row-wide address-field validate-required">
+                                            <label class="" for="billing_address_1">Address <abbr title="required" class="required">*</abbr>
+                                            </label>
+                                            <input type="text" value="" placeholder="Street address" id="ShippingAddress" name="billing_address_1" class="input-text ">
+                                        </p>
+
+                                        <div class="clear"></div>
+                                        <p>
+                                            Province  : <select name= "flatform" id="slProvince">
+                                                <option value="An Giang">An Giang
+                                                <option value="Bà Rịa - Vũng Tàu">Bà Rịa - Vũng Tàu
+                                                <option value="Bắc Giang">Bắc Giang
+                                                <option value="Bắc Kạn">Bắc Kạn
+                                                <option value="Bạc Liêu">Bạc Liêu
+                                                <option value="Bắc Ninh">Bắc Ninh
+                                                <option value="Bến Tre">Bến Tre
+                                                <option value="Bình Định">Bình Định
+                                                <option value="Bình Dương">Bình Dương
+                                                <option value="Bình Phước">Bình Phước
+                                                <option value="Bình Thuận">Bình Thuận
+                                                <option value="Bình Thuận">Bình Thuận
+                                                <option value="Cà Mau">Cà Mau
+                                                <option value="Cao Bằng">Cao Bằng
+                                                <option value="Đắk Lắk">Đắk Lắk
+                                                <option value="Đắk Nông">Đắk Nông
+                                                <option value="Điện Biên">Điện Biên
+                                                <option value="Đồng Nai">Đồng Nai
+                                                <option value="Đồng Tháp">Đồng Tháp
+                                                <option value="Đồng Tháp">Đồng Tháp
+                                                <option value="Gia Lai">Gia Lai
+                                                <option value="Hà Giang">Hà Giang
+                                                <option value="Hà Nam">Hà Nam
+                                                <option value="Hà Tĩnh">Hà Tĩnh
+                                                <option value="Hải Dương">Hải Dương
+                                                <option value="Hậu Giang">Hậu Giang
+                                                <option value="Hòa Bình">Hòa Bình
+                                                <option value="Hưng Yên">Hưng Yên
+                                                <option value="Khánh Hòa">Khánh Hòa
+                                                <option value="Kiên Giang">Kiên Giang
+                                                <option value="Kon Tum">Kon Tum
+                                                <option value="Lai Châu">Lai Châu
+                                                <option value="Lâm Đồng">Lâm Đồng
+                                                <option value="Lạng Sơn">Lạng Sơn
+                                                <option value="Lào Cai">Lào Cai
+                                                <option value="Long An">Long An
+                                                <option value="Nam Định">Nam Định
+                                                <option value="Nghệ An">Nghệ An
+                                                <option value="Ninh Bình">Ninh Bình
+                                                <option value="Ninh Thuận">Ninh Thuận
+                                                <option value="Phú Thọ">Phú Thọ
+                                                <option value="Quảng Bình">Quảng Bình
+                                                <option value="Quảng Bình">Quảng Bình
+                                                <option value="Quảng Ngãi">Quảng Ngãi
+                                                <option value="Quảng Ninh">Quảng Ninh
+                                                <option value="Quảng Trị">Quảng Trị
+                                                <option value="Sóc Trăng">Sóc Trăng
+                                                <option value="Sơn La">Sơn La
+                                                <option value="Tây Ninh">Tây Ninh
+                                                <option value="Thái Bình">Thái Bình
+                                                <option value="Thái Nguyên">Thái Nguyên
+                                                <option value="Thanh Hóa">Thanh Hóa
+                                                <option value="Thừa Thiên Huế">Thừa Thiên Huế
+                                                <option value="Tiền Giang">Tiền Giang
+                                                <option value="Trà Vinh">Trà Vinh
+                                                <option value="Tuyên Quang">Tuyên Quang
+                                                <option value="Vĩnh Long">Vĩnh Long
+                                                <option value="Vĩnh Phúc">Vĩnh Phúc
+                                                <option value="Yên Bái">Yên Bái
+                                                <option value="Phú Yên">Phú Yên
+                                                <option value="Tp.Cần Thơ">Tp.Cần Thơ
+                                                <option value="Tp.Đà Nẵng">Tp.Đà Nẵng
+                                                <option value="Tp.Hải Phòng">Tp.Hải Phòng
+                                                <option value="Tp.Hà Nội">Tp.Hà Nội
+                                                <option value="TP  HCM">TP HCM
+                                                </select>
+                                        </p>
+                                       
+
+
+                                        <div class="clear"></div>
+
+                         
+
+                                        <p id="billing_phone_field" class="form-row form-row-last validate-required validate-phone">
+                                            <label class="" for="billing_phone">Phone <abbr title="required" class="required">*</abbr>
+                                            </label>
+                                            <input type="text" value="" placeholder="Phone number" id="ShippingPhone" name="ShippingPhone" class="input-text ">
+                                        </p>
+                                        <div class="clear"></div>
+
+
+                                  
+
+                                    </div>
+                                </div>
+
+                                <div class="col-2">
+
+                                    </div>
+                                </div>
+                            
+
+                            <h3 id="order_review_heading">Your order</h3>
+
+                            <div id="order_review" style="position: relative;">
+                                <table class="shop_table">
+                                    <thead>
+                                        <tr>
+                                            <th class="product-name">Product</th>
+                                            <th class="product-quantity">Quantity</th>
+                                            <th class="product-price">Price Per One</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor="let item of products" class="cart_item">
+                                            <td class="product-name">
+                                                {{item.name}}  </td>
+                                                <td class="product-quantity">
+                                                    <span style="float:none" class="quantity">{{item.qty}}</span> </td>
+                                            <td class="product-total">
+                                                <span  class="amount">{{item.price}}</span> </td>
+                                        </tr>
+                                    </tbody>
+                                    <tfoot>
+
+
+                                        <tr *ngIf="discount" class="order-discoundpercent">
+                                            <th>Coupon Discount</th>
+                                            <td><strong><span class="discoundpercent"></span></strong> </td>
+                                        <td><strong><span  class="discoundpercent">{{discountpercent}}%</span></strong> </td>
+                                        </tr>
+                                        <tr class="order-total">
+                                            <th>Order Total</th>
+                                            <td><strong><span class="amount"></span></strong> </td>
+                                        <td><strong><span  class="amount">{{total}}</span></strong> </td>
+                                        </tr>
+
+                                    </tfoot>
+                                </table>
+
+
+                                <div id="payment">
+                                    <ul class="payment_methods methods">
+                                        
+                                        <li class="payment_method_paypal">
+                                           
+                                            <label for="payment_method_paypal">PayPal <img alt="PayPal Acceptance Mark" src="https://www.paypalobjects.com/webstatic/mktg/Logo/AM_mc_vs_ms_ae_UK.png"><a title="What is PayPal?" onclick="javascript:window.open('https://www.paypal.com/gb/webapps/mpp/paypal-popup','WIPaypal','toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=1060, height=700'); return false;" class="about_paypal" href="https://www.paypal.com/gb/webapps/mpp/paypal-popup">What is PayPal?</a>
+                                            </label>
+                                            <div style="display:none;" class="payment_box payment_method_paypal">
+                                                <p>Pay via PayPal; you can pay with your credit card if you don’t have a PayPal account.</p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div #paypalRef></div>
+                                        </li>
+                                    </ul>
+
+                                    <div *ngIf="!checkLogin" class="woocommerce-info">You have to login to order products! 
+                                        <a class="showlogin" data-toggle="collapse" routerLink="/home/login" aria-expanded="false" aria-controls="login-form-wrap">Click here to login</a>
+                                                </div>
+                                    <div *ngIf="checkLogin" class="form-row place-order">
+                                        <input (click)="purchase()" type="submit" data-value="Place order" value="Place order" id="place_order" name="woocommerce_checkout_place_order" class="button alt">
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </form>
+
+                    </div>                       
+                </div>                    
+            </div>
+        </div>
+    </div>
+</div>
+

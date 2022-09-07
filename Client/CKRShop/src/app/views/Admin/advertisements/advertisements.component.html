@@ -1,0 +1,80 @@
+<c-col xs="12">
+  <c-card class="mb-4">
+    <c-card-header>
+      <strong>All Advertisements</strong>
+    </c-card-header>
+    <c-card-body>
+      <mat-toolbar color="primary">
+        <mat-toolbar-row>
+          <span>Advertisement</span>
+          <span class="example-spacer"></span>
+          <span class="example-spacer"></span>
+          <button (click)="openDialog();" mat-icon-button class="example-icon add-icon"
+            aria-label="Example icon-button with heart icon">
+            <mat-icon>add</mat-icon>
+          </button>
+          <button mat-raised-button color="warn" (click)="openDialog();">Add Image</button>
+        </mat-toolbar-row>
+
+
+      </mat-toolbar>
+
+
+      <div class="container">
+        <div style="margin-top:10px;">
+          <mat-form-field appearance="standard">
+            <mat-label>Filter</mat-label>
+            <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Laptop G63" #input>
+          </mat-form-field>
+          <button type="button" (click)="refreshForm()"
+            style="position: absolute; margin-left:-70px; margin-top: 10px; " mat-raised-button color="warn">
+            <mat-icon>refresh</mat-icon>
+          </button>
+          <div class="mat-elevation-z8">
+            <table mat-table [dataSource]="dataSource" matSort>
+              <!-- ID Column -->
+              <ng-container matColumnDef="image">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Image </th>
+                <td mat-cell *matCellDef="let row"> <img [src]="createImgPath(row.image)"
+                    style="margin-left:-6%; width:250px; height:150px; padding:10px;">
+                </td>
+              </ng-container>
+              <ng-container matColumnDef="imageTypeId">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Category Image </th>
+                <td style="padding-left: 2%;" mat-cell *matCellDef="let row"> {{row.AdvertisementType}} </td>
+              </ng-container>
+              <ng-container matColumnDef="createdAt">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Category Image </th>
+                <td mat-cell *matCellDef="let row"> {{row.createdAt | date}} </td>
+              </ng-container>
+              <ng-container matColumnDef="status">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Status </th>
+                <td mat-cell *matCellDef="let row"> {{row.status==1?"Active":"Inactive"}} </td>
+              </ng-container>
+              <ng-container matColumnDef="action">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Action </th>
+                <td mat-cell *matCellDef="let row">
+                  <button style="margin-left: -8%;" (click)="editAdvertisement(row)" mat-icon-button color="primary">
+                    <mat-icon>edit</mat-icon>
+                  </button>
+                  <button (click)="deleteAdvertisement(row.id)" mat-icon-button color="warn">
+                    <mat-icon>delete</mat-icon>
+                  </button>
+                </td>
+              </ng-container>
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+
+              <!-- Row shown when there is no matching data. -->
+              <tr class="mat-row" *matNoDataRow>
+                <td class="mat-cell" colspan="4">There are no advertisement in this list yet</td>
+              </tr>
+            </table>
+            <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+          </div>
+        </div>
+      </div>
+    </c-card-body>
+  </c-card>
+</c-col>

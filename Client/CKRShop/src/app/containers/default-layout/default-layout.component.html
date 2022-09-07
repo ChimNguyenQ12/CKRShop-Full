@@ -1,0 +1,68 @@
+<!--sidebar-->
+<c-sidebar *ngIf="checkLogin" #sidebar="cSidebar" class="d-print-none sidebar sidebar-fixed" id="sidebar" visible>
+  <c-sidebar-brand [brandFull]="{
+      src: 'assets/img/avatars/logo.jpg',
+      width: 150,
+      height: 80,
+      alt: 'CoreUI Logo'
+    }" [brandNarrow]="{
+      src: 'assets/img/avatars/logo.jpg',
+      width: 46,
+      height: 46,
+      alt: 'CoreUI Logo'
+    }" routerLink="/admin">
+  </c-sidebar-brand>
+  <perfect-scrollbar [config]="perfectScrollbarConfig">
+
+    <c-sidebar-nav [navItems]="navItems">
+    </c-sidebar-nav>
+  </perfect-scrollbar>
+  <c-sidebar-toggler *ngIf="!sidebar.narrow" toggle="unfoldable" cSidebarToggle="sidebar"></c-sidebar-toggler>
+
+</c-sidebar>
+
+<c-modal #scrollableLongContentModal id="scrollableLongContentModal" scrollable>
+  <c-modal-header style="background-color: rgb(5, 48, 114);">
+    <h1 style="color: rgb(255, 255, 255); font-weight: bold;" cModalTitle>Conversation</h1> <br>
+    <button style="margin-top: -10%;background-color: white;" [cModalToggle]="scrollableLongContentModal.id"
+      cButtonClose></button>
+  </c-modal-header>
+  <c-modal-body>
+    <ng-container *ngTemplateOutlet="longContent"></ng-container>
+  </c-modal-body>
+  <c-modal-footer>
+    <button [disabled]="!checkType" mat-raised-button color="primary" (click)="submit();"> Send</button>
+  </c-modal-footer>
+
+</c-modal>
+<ng-template #longContent>
+
+  <div class="container">
+    <div class="d-flex flex-column align-items-stretch flex-shrink-0 bg-white" style="width: 380px;">
+      <div *ngFor="let msg of messages" class="list-group list-group-flush border-bottom scrollarea">
+        <div class="d-flex w-20 align-items-center justify-content-between">
+          <strong style="color: red;" class="mb-1">{{msg.username}}</strong>
+        </div>
+        <div class="col-10 mb-1 small">{{msg.message}}</div>
+      </div>
+    </div>
+  </div>
+  <form style="margin-top: 30px;" (submit)="submit()">
+    <input (change)="check()" class="form-control" placeholder="Write a message" [value]="message"
+      (change)="message=$any($event.target).value">
+  </form>
+</ng-template>
+<!--main-->
+<div class="wrapper d-flex flex-column min-vh-100 bg-light dark:bg-transparent">
+  <!--app-header-->
+  <app-default-header class="mb-4 d-print-none header header-sticky" position="sticky" sidebarId="sidebar">
+  </app-default-header>
+  <!--app-body-->
+  <div class="body flex-grow-1 px-3">
+    <c-container breakpoint="lg" class="h-auto">
+      <router-outlet></router-outlet>
+    </c-container>
+  </div>
+  <!--app footer-->
+  <app-default-footer></app-default-footer>
+</div>

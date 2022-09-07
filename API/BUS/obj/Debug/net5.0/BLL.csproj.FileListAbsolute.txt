@@ -1,0 +1,90 @@
+D:\ASP.NET\Đồ Án Tốt Nghiệp\CKRShop\BUS\bin\Debug\net5.0\BLL.deps.json
+D:\ASP.NET\Đồ Án Tốt Nghiệp\CKRShop\BUS\bin\Debug\net5.0\BLL.dll
+D:\ASP.NET\Đồ Án Tốt Nghiệp\CKRShop\BUS\bin\Debug\net5.0\BLL.pdb
+D:\ASP.NET\Đồ Án Tốt Nghiệp\CKRShop\BUS\bin\Debug\net5.0\DAL.dll
+D:\ASP.NET\Đồ Án Tốt Nghiệp\CKRShop\BUS\bin\Debug\net5.0\DAL.pdb
+D:\ASP.NET\Đồ Án Tốt Nghiệp\CKRShop\BUS\obj\Debug\net5.0\BLL.csproj.AssemblyReference.cache
+D:\ASP.NET\Đồ Án Tốt Nghiệp\CKRShop\BUS\obj\Debug\net5.0\BLL.GeneratedMSBuildEditorConfig.editorconfig
+D:\ASP.NET\Đồ Án Tốt Nghiệp\CKRShop\BUS\obj\Debug\net5.0\BLL.AssemblyInfoInputs.cache
+D:\ASP.NET\Đồ Án Tốt Nghiệp\CKRShop\BUS\obj\Debug\net5.0\BLL.AssemblyInfo.cs
+D:\ASP.NET\Đồ Án Tốt Nghiệp\CKRShop\BUS\obj\Debug\net5.0\BLL.csproj.CoreCompileInputs.cache
+D:\ASP.NET\Đồ Án Tốt Nghiệp\CKRShop\BUS\obj\Debug\net5.0\BLL.csproj.CopyComplete
+D:\ASP.NET\Đồ Án Tốt Nghiệp\CKRShop\BUS\obj\Debug\net5.0\BLL.dll
+D:\ASP.NET\Đồ Án Tốt Nghiệp\CKRShop\BUS\obj\Debug\net5.0\refint\BLL.dll
+D:\ASP.NET\Đồ Án Tốt Nghiệp\CKRShop\BUS\obj\Debug\net5.0\BLL.pdb
+D:\ASP.NET\Đồ Án Tốt Nghiệp\CKRShop\BUS\obj\Debug\net5.0\ref\BLL.dll
+D:\ASP.NET\Đồ Án Tốt Nghiệp\CKRShop\API\BUS\bin\Debug\net5.0\BLL.deps.json
+D:\ASP.NET\Đồ Án Tốt Nghiệp\CKRShop\API\BUS\bin\Debug\net5.0\BLL.dll
+D:\ASP.NET\Đồ Án Tốt Nghiệp\CKRShop\API\BUS\bin\Debug\net5.0\BLL.pdb
+D:\ASP.NET\Đồ Án Tốt Nghiệp\CKRShop\API\BUS\bin\Debug\net5.0\DAL.dll
+D:\ASP.NET\Đồ Án Tốt Nghiệp\CKRShop\API\BUS\bin\Debug\net5.0\DAL.pdb
+D:\ASP.NET\Đồ Án Tốt Nghiệp\CKRShop\API\BUS\obj\Debug\net5.0\BLL.csproj.AssemblyReference.cache
+D:\ASP.NET\Đồ Án Tốt Nghiệp\CKRShop\API\BUS\obj\Debug\net5.0\BLL.GeneratedMSBuildEditorConfig.editorconfig
+D:\ASP.NET\Đồ Án Tốt Nghiệp\CKRShop\API\BUS\obj\Debug\net5.0\BLL.AssemblyInfoInputs.cache
+D:\ASP.NET\Đồ Án Tốt Nghiệp\CKRShop\API\BUS\obj\Debug\net5.0\BLL.AssemblyInfo.cs
+D:\ASP.NET\Đồ Án Tốt Nghiệp\CKRShop\API\BUS\obj\Debug\net5.0\BLL.csproj.CoreCompileInputs.cache
+D:\ASP.NET\Đồ Án Tốt Nghiệp\CKRShop\API\BUS\obj\Debug\net5.0\BLL.csproj.CopyComplete
+D:\ASP.NET\Đồ Án Tốt Nghiệp\CKRShop\API\BUS\obj\Debug\net5.0\BLL.dll
+D:\ASP.NET\Đồ Án Tốt Nghiệp\CKRShop\API\BUS\obj\Debug\net5.0\refint\BLL.dll
+D:\ASP.NET\Đồ Án Tốt Nghiệp\CKRShop\API\BUS\obj\Debug\net5.0\BLL.pdb
+D:\ASP.NET\Đồ Án Tốt Nghiệp\CKRShop\API\BUS\obj\Debug\net5.0\ref\BLL.dll
+D:\DATN\CKRShop\API\BUS\bin\Debug\net5.0\BLL.deps.json
+D:\DATN\CKRShop\API\BUS\bin\Debug\net5.0\BLL.dll
+D:\DATN\CKRShop\API\BUS\bin\Debug\net5.0\BLL.pdb
+D:\DATN\CKRShop\API\BUS\bin\Debug\net5.0\DAL.dll
+D:\DATN\CKRShop\API\BUS\bin\Debug\net5.0\DAL.pdb
+D:\DATN\CKRShop\API\BUS\obj\Debug\net5.0\BLL.csproj.AssemblyReference.cache
+D:\DATN\CKRShop\API\BUS\obj\Debug\net5.0\BLL.GeneratedMSBuildEditorConfig.editorconfig
+D:\DATN\CKRShop\API\BUS\obj\Debug\net5.0\BLL.AssemblyInfoInputs.cache
+D:\DATN\CKRShop\API\BUS\obj\Debug\net5.0\BLL.AssemblyInfo.cs
+D:\DATN\CKRShop\API\BUS\obj\Debug\net5.0\BLL.csproj.CoreCompileInputs.cache
+D:\DATN\CKRShop\API\BUS\obj\Debug\net5.0\BLL.csproj.CopyComplete
+D:\DATN\CKRShop\API\BUS\obj\Debug\net5.0\BLL.dll
+D:\DATN\CKRShop\API\BUS\obj\Debug\net5.0\refint\BLL.dll
+D:\DATN\CKRShop\API\BUS\obj\Debug\net5.0\BLL.pdb
+D:\DATN\CKRShop\API\BUS\obj\Debug\net5.0\ref\BLL.dll
+D:\ASP.NET\Đồ Án Tốt Nghiệp\ProcessDATN\CKRShop\API\BUS\bin\Debug\net5.0\BLL.deps.json
+D:\ASP.NET\Đồ Án Tốt Nghiệp\ProcessDATN\CKRShop\API\BUS\bin\Debug\net5.0\BLL.dll
+D:\ASP.NET\Đồ Án Tốt Nghiệp\ProcessDATN\CKRShop\API\BUS\bin\Debug\net5.0\BLL.pdb
+D:\ASP.NET\Đồ Án Tốt Nghiệp\ProcessDATN\CKRShop\API\BUS\bin\Debug\net5.0\DAL.dll
+D:\ASP.NET\Đồ Án Tốt Nghiệp\ProcessDATN\CKRShop\API\BUS\bin\Debug\net5.0\DAL.pdb
+D:\ASP.NET\Đồ Án Tốt Nghiệp\ProcessDATN\CKRShop\API\BUS\obj\Debug\net5.0\BLL.csproj.AssemblyReference.cache
+D:\ASP.NET\Đồ Án Tốt Nghiệp\ProcessDATN\CKRShop\API\BUS\obj\Debug\net5.0\BLL.GeneratedMSBuildEditorConfig.editorconfig
+D:\ASP.NET\Đồ Án Tốt Nghiệp\ProcessDATN\CKRShop\API\BUS\obj\Debug\net5.0\BLL.AssemblyInfoInputs.cache
+D:\ASP.NET\Đồ Án Tốt Nghiệp\ProcessDATN\CKRShop\API\BUS\obj\Debug\net5.0\BLL.AssemblyInfo.cs
+D:\ASP.NET\Đồ Án Tốt Nghiệp\ProcessDATN\CKRShop\API\BUS\obj\Debug\net5.0\BLL.csproj.CoreCompileInputs.cache
+D:\ASP.NET\Đồ Án Tốt Nghiệp\ProcessDATN\CKRShop\API\BUS\obj\Debug\net5.0\BLL.csproj.CopyComplete
+D:\ASP.NET\Đồ Án Tốt Nghiệp\ProcessDATN\CKRShop\API\BUS\obj\Debug\net5.0\BLL.dll
+D:\ASP.NET\Đồ Án Tốt Nghiệp\ProcessDATN\CKRShop\API\BUS\obj\Debug\net5.0\refint\BLL.dll
+D:\ASP.NET\Đồ Án Tốt Nghiệp\ProcessDATN\CKRShop\API\BUS\obj\Debug\net5.0\BLL.pdb
+D:\ASP.NET\Đồ Án Tốt Nghiệp\ProcessDATN\CKRShop\API\BUS\obj\Debug\net5.0\ref\BLL.dll
+D:\ASP.NET\Đồ Án Tốt Nghiệp\CKRShop_new\API\BUS\bin\Debug\net5.0\BLL.deps.json
+D:\ASP.NET\Đồ Án Tốt Nghiệp\CKRShop_new\API\BUS\bin\Debug\net5.0\BLL.dll
+D:\ASP.NET\Đồ Án Tốt Nghiệp\CKRShop_new\API\BUS\bin\Debug\net5.0\BLL.pdb
+D:\ASP.NET\Đồ Án Tốt Nghiệp\CKRShop_new\API\BUS\bin\Debug\net5.0\DAL.dll
+D:\ASP.NET\Đồ Án Tốt Nghiệp\CKRShop_new\API\BUS\bin\Debug\net5.0\DAL.pdb
+D:\ASP.NET\Đồ Án Tốt Nghiệp\CKRShop_new\API\BUS\obj\Debug\net5.0\BLL.csproj.AssemblyReference.cache
+D:\ASP.NET\Đồ Án Tốt Nghiệp\CKRShop_new\API\BUS\obj\Debug\net5.0\BLL.GeneratedMSBuildEditorConfig.editorconfig
+D:\ASP.NET\Đồ Án Tốt Nghiệp\CKRShop_new\API\BUS\obj\Debug\net5.0\BLL.AssemblyInfoInputs.cache
+D:\ASP.NET\Đồ Án Tốt Nghiệp\CKRShop_new\API\BUS\obj\Debug\net5.0\BLL.AssemblyInfo.cs
+D:\ASP.NET\Đồ Án Tốt Nghiệp\CKRShop_new\API\BUS\obj\Debug\net5.0\BLL.csproj.CoreCompileInputs.cache
+D:\ASP.NET\Đồ Án Tốt Nghiệp\CKRShop_new\API\BUS\obj\Debug\net5.0\BLL.csproj.CopyComplete
+D:\ASP.NET\Đồ Án Tốt Nghiệp\CKRShop_new\API\BUS\obj\Debug\net5.0\BLL.dll
+D:\ASP.NET\Đồ Án Tốt Nghiệp\CKRShop_new\API\BUS\obj\Debug\net5.0\refint\BLL.dll
+D:\ASP.NET\Đồ Án Tốt Nghiệp\CKRShop_new\API\BUS\obj\Debug\net5.0\BLL.pdb
+D:\ASP.NET\Đồ Án Tốt Nghiệp\CKRShop_new\API\BUS\obj\Debug\net5.0\ref\BLL.dll
+E:\Dao Duc Tinh\DATN\CKRShop\API\BUS\bin\Debug\net5.0\BLL.deps.json
+E:\Dao Duc Tinh\DATN\CKRShop\API\BUS\bin\Debug\net5.0\BLL.dll
+E:\Dao Duc Tinh\DATN\CKRShop\API\BUS\bin\Debug\net5.0\BLL.pdb
+E:\Dao Duc Tinh\DATN\CKRShop\API\BUS\bin\Debug\net5.0\DAL.dll
+E:\Dao Duc Tinh\DATN\CKRShop\API\BUS\bin\Debug\net5.0\DAL.pdb
+E:\Dao Duc Tinh\DATN\CKRShop\API\BUS\obj\Debug\net5.0\BLL.csproj.AssemblyReference.cache
+E:\Dao Duc Tinh\DATN\CKRShop\API\BUS\obj\Debug\net5.0\BLL.GeneratedMSBuildEditorConfig.editorconfig
+E:\Dao Duc Tinh\DATN\CKRShop\API\BUS\obj\Debug\net5.0\BLL.AssemblyInfoInputs.cache
+E:\Dao Duc Tinh\DATN\CKRShop\API\BUS\obj\Debug\net5.0\BLL.AssemblyInfo.cs
+E:\Dao Duc Tinh\DATN\CKRShop\API\BUS\obj\Debug\net5.0\BLL.csproj.CoreCompileInputs.cache
+E:\Dao Duc Tinh\DATN\CKRShop\API\BUS\obj\Debug\net5.0\BLL.csproj.CopyComplete
+E:\Dao Duc Tinh\DATN\CKRShop\API\BUS\obj\Debug\net5.0\BLL.dll
+E:\Dao Duc Tinh\DATN\CKRShop\API\BUS\obj\Debug\net5.0\refint\BLL.dll
+E:\Dao Duc Tinh\DATN\CKRShop\API\BUS\obj\Debug\net5.0\BLL.pdb
+E:\Dao Duc Tinh\DATN\CKRShop\API\BUS\obj\Debug\net5.0\ref\BLL.dll

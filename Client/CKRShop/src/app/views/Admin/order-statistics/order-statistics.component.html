@@ -1,0 +1,29 @@
+<app-widgets-dropdown-order></app-widgets-dropdown-order>
+<ul>
+</ul>
+
+<div class="container-fluid">
+  <div class="row pt-2">
+    <div class="col-md-12">
+      <div class="card text-left">
+        <div class="card-body">
+          <h4 class="card-title border-bottom">Vertical Bar Charts</h4>
+          <ngx-charts-bar-vertical [view]="[1150,500]" [results]="orderData" [xAxisLabel]="'Orders'"
+            [legendTitle]="'Order Sale Chart'" [yAxisLabel]="'Sale'" [legend]="true" [showXAxisLabel]="true"
+            [showYAxisLabel]="true" [xAxis]="true" [yAxis]="true" [gradient]="true">
+          </ngx-charts-bar-vertical>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-12">
+      <div class="card text-left">
+        <div class="card-body">
+          <h4 class="card-title border-bottom">Pie Charts</h4>
+          <ngx-charts-pie-chart [results]="orderData" [legend]="true" [legendTitle]="'Order Sale Report'"
+            [view]="[1100,400]" [labels]="true">
+          </ngx-charts-pie-chart>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
